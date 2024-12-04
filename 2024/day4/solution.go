@@ -66,16 +66,8 @@ func findWord(start string, matrix [][]string, count countPos) int {
 
 func Solve() {
     matrix := readInput("input.txt")
-    test2 := readInput("test.txt")
 
-    test := [][]string{
-        {"M",".","S"},
-        {".","A","."},
-        {"M",".","S"},
-    }
     fmt.Println("Part 1: ", findWord("X", matrix, PosXMAS))
     fmt.Println("Part 2: ", findWord("A", matrix, PosX_MAS))
-    fmt.Println("Part 2: ", findWord("A", test, PosX_MAS))
-    fmt.Println("Part 2: ", findWord("A", test2, PosX_MAS))
 }
 
