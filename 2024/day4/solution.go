@@ -1,9 +1,7 @@
 package day4
 
 import (
-    "os"
     "fmt"
-    "strings"
 
     "advent-of-code-2024.friess.studio/common"
 )
@@ -14,20 +12,6 @@ type vector struct {
 }
 
 type countPos func(vector, [][]string) int
-
-func readInput(filename string) [][]string {
-    file, err := os.ReadFile("./day4/" + filename)
-    common.Check(err)
-    lines := strings.Split(string(file), "\n")
-    lines = lines[:len(lines)-1]
-    var matrix [][]string 
-    for _, line := range lines {
-        bytesOfLine := strings.Split(line, "")
-        matrix = append(matrix, bytesOfLine)
-    }
-
-    return matrix
-}
 
 func checkDirection(word string, pos vector, dir vector, matrix [][]string) int {
     var dirWord string = string(matrix[pos.y][pos.x])
@@ -65,7 +49,7 @@ func findWord(start string, matrix [][]string, count countPos) int {
 }
 
 func Solve() {
-    matrix := readInput("input.txt")
+    matrix := common.ReadFileToMatrix("./day4/input.txt")
 
     fmt.Println("Part 1: ", findWord("X", matrix, PosXMAS))
     fmt.Println("Part 2: ", findWord("A", matrix, PosX_MAS))
