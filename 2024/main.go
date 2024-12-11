@@ -11,6 +11,7 @@ import (
     "advent-of-code-2024.friess.studio/day6"
     "advent-of-code-2024.friess.studio/day7"
     "advent-of-code-2024.friess.studio/day8"
+    "advent-of-code-2024.friess.studio/day9"
 )
 
 func main() {
@@ -37,6 +38,9 @@ func main() {
 
     fmt.Println("\nDay 8: ")
     day8.Solve()
+
+    fmt.Println("\nDay 9: ")
+    day9.Solve()
 
 }
 
